@@ -493,7 +493,7 @@ function registerGltfMeshes(root) {
   });
 }
 
-const GLB_URL = "./public/neuron.glb";
+const GLB_URL = "./neuron.glb";
 
 setStatus("Loading neuron model…");
 
