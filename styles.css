@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #020810;
+  color: #e2e8f0;
+}
+
+#app {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Full-viewport WebGL layer (HUD/popup sit on top) */
+#scene {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: none;
+  z-index: 0;
+}
+
+#hud,
+#status,
+#part-caption {
+  z-index: 1;
+}
+
+#part-caption {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(520px, calc(100vw - 32px));
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#part-caption.is-visible {
+  opacity: 1;
+}
+
+#part-name {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 255, 204, 0.92);
+  margin: 0;
+}
+
+#part-desc {
+  margin: 6px 0 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: rgba(203, 213, 225, 0.9);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+#hud {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  max-width: 340px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+#hud h1 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+#hud p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: #cbd5e1;
+}
+
+#hud .hud-note {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+#hud code {
+  font-size: 0.78em;
+  color: #bae6fd;
+}
+
+#status {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(2, 6, 23, 0.82);
+}
